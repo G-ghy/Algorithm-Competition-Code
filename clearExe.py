@@ -9,15 +9,10 @@ def clearFilesInDictionary(dictionaryPath):
         if os.path.isdir(filePath):
             clearFilesInDictionary(filePath)
         else:
-            pass
             fileSuffix = os.path.splitext(filePath)[1]
             if fileSuffix == '.exe':
                 os.remove(filePath)
 
 if __name__ == "__main__":
     basePath = os.getcwd()
-    dictionaryNames = ["leetcode", "acwing", "codeForces", "牛客", "pta", "atcoder", "对拍"]
-
-    for dictionaryName in dictionaryNames:
-        dictionaryPath = basePath + "\\" + dictionaryName
-        clearFilesInDictionary(dictionaryPath)
+    clearFilesInDictionary(basePath);
