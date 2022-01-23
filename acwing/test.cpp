@@ -31,6 +31,7 @@ string to_string(A v) {
 }
 
 void solve() {
+  cout << (-6 % 3) << endl;
 }
 int main() {
   ios::sync_with_stdio(false);
