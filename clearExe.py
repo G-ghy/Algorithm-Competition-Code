@@ -21,7 +21,6 @@ def clearFilesInDictionary(dictionaryPath):
             if fileName == 'tempCodeRunnerFile' or fileSuffix == 'exe':
                 print("删除文件: " + filePath)
                 os.remove(filePath)
-
 if __name__ == "__main__":
     basePath = os.getcwd()
     clearFilesInDictionary(basePath);
