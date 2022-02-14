@@ -15,22 +15,24 @@
 
 using namespace std;
 
-// constexpr int N = 
+constexpr int N = 110;
 constexpr int INF = 0x3f3f3f3f;
 
-int gcd(int a, int b) {
-    while (b) {
-        int r = a % b;
-        a = b;
-        b = r;
-    }
-    return a;
-}
+int n;
+int xl = 0, xr = 0;
+
 void solve() {
-    int cnt = 0;
-    for (int i = 1; i <= 2020; ++i)
-        if (__gcd(i, 1018) == 1) ++cnt;
-    cout << cnt << '\n';
+    cin >> n;
+    for (int i = 0; i < n; ++i) {
+        int x, y;
+        cin >> x >> y;
+        if (x < 0) ++xl;
+        else ++xr;
+    }
+    
+    
+    if (xl > 1 && xr > 1) cout << "No\n";
+    else cout << "Yes\n";
 }
 int main() {
     ios::sync_with_stdio(false);
