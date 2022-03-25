@@ -15,17 +15,28 @@
 
 using namespace std;
 
-// constexpr int N = 
+constexpr int N = 210;
 constexpr int INF = 0x3f3f3f3f;
 
+int n, k;
+int a[N];
+
 void solve() {
-    char str[10] = "abc";
-    char *a = str;
-    printf("%c\n", *(a++));
+    cin >> n >> k;
+    for (int i = 0; i < k; ++i) cin >> a[i];
+
+    int maxx = -INF;
+    for (int i = 0; i < k - 1; ++i) maxx = max(maxx, (a[i + 1] - a[i] + 1 + 1) / 2);
+    maxx = max(maxx, a[0]);
+    maxx = max(maxx, n - a[k - 1] + 1);
+
+    cout << maxx << '\n';
 }
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0); cout.tie(0);
-    solve();
+    int T;
+    cin >> T;
+    while (T--) solve();
     return 0;
 }
